@@ -1,0 +1,14 @@
+{
+  "type": "service_account",
+  "project_id": "redcap-to-sheets-testing",
+  "private_key_id": "b98fec112e96e325a5862c6d2e880585c852dd6f",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCh4ZV2H1z4mRWj\nMjsr8NHDNO3pDNxlOQs0JHUgbvwTcSGo8lkd5GeswvNJDgTUPCUq7UQn24YRdlqp\nVDr48ZfhyFeYP31MPoWv4vMGWwKoS1vq31KSmnoHlE7NowK556yFJcifA2Cpow8L\nWA2t9POy9CFBNFryYy2k16DWrJ3e+3ndppVTDe4sOa5M8mn6ZxAvFthwXXe6m/0c\nz+VmRZETe+PQEmhpQky94XMw5lpZEacrXy/WlM5jgoJ+aah/LFcirKdh1MNpHEUP\nO/mMPeI64udyIYO24+hts0lIBF4UQ9+vHi/RGm6UMvo/rtV4+6eaEGEu5AHYw+j8\n0/mjEphzAgMBAAECggEAFH116k0EpZWAPvc9X3h3SfAfKl/YXcT0qBWdRbexQdIQ\nt/kaUpr14dDjSRyfJoYJEP/rSpLndg+3C2EqqGwGv4DDpZ++VQeXlbByS8b6n8wP\ncbvxZbZr5R2z7nodqY5WMJxHDT7jiKqnstXjFWEV9PwgYXJ7uIaD4S5HS3pEmVP5\nJK2YXMbqHUGg22IejFrdt6S23Dk61Bm/34VHcM68ydKWxKyNgTKQf0XhuZ2NYvFb\nciiHG/v4o/OZd0ruE3+KH76DW2E6Yk54XakhklgtAxFNRfww/lY2rJhiOvGyaNbY\nScvxZM3vDgmHtF/3gjMPJxhf/gsukCD7ktT8zogRMQKBgQDWQ9iyAijAcGn0A5+7\njG0kRY2ZdBp/r2nlnzEn/ZYfCYcT3ihoaqbPjgoaC7ogpUEZvGpMpwNhr2QLV2+T\nMz2RPcrRb6rz5ta0DVNyEeCRdhG3xzdCwZ7GeAIHGX/azEjxniqIM4FzllFPNEm9\nnkr87JUOipw7qFtuY41t/yry1wKBgQDBaajIJaabUzjbPCqwH2G8GoJRVDD5uxrD\nCYHN0vwYbDHl9gy+Xy3B+FzM43DufWUASpp89ZQJ7lsn1U6j9nseYjK9ODL5JOGj\npK7s9tgJoJj3z6fkwCG8LTrKIjd726lXLbo3kXBKLmWoOpSvG5qCFKyLAEVT5vk+\n1mdUqUnvxQKBgQC930m8FSW/wt5hmoSGUp61Md2VSsngtLWHAlcxNQs/XdYRySDN\nxxUjgJ97DUFXhJn4EHuyiZ35hs+FLWp2a0X322ZLykUX9kv1Konz39u9i3+P+D4E\nLkhhYB+L4xDl93n8g0j1gY8Juv86zP87xXZ2Q8CjLjnctAix/g5ql2Cb6QKBgQCK\nmN+FBU39kkZ0/AmPCf3sYIawJwetfUGxL7ffuWhDTAz5wDbjmKrei85cWEON8zeU\nXOGV2BlMgIy736Qp5K/XVwELDSGh3ab/sDxVvJGVXIshUaH7Tx8djL/LJ3fg/si7\nmx4NQeBYmCTqx4fSb5Jp0szOEtSbSjGjsNp9FY7RDQKBgQCiW0g1GbKYm0+Ay7oF\nowLC0H1s+/n56NqDo56vYxKfrR2qFEWdAd8fz8jGRtczhy1bSefN2yPEcxxRJSUf\nMfG28CFhK8Or+dPwf42TMMW7/I1PodJjfw8xFPTknv7/d3fUio0oCmymHFrDJK0k\noQYNHhqDSOQPOyweKWcVy6vZGg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "catmh-automation@redcap-to-sheets-testing.iam.gserviceaccount.com",
+  "client_id": "105829210744856398885",
+  "client_id2": "337780620610-bi2d3us0aa4o52rkv2jqlk5vjivku2ud.apps.googleusercontent.com ",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/catmh-automation%40redcap-to-sheets-testing.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

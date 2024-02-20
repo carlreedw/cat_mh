@@ -1,0 +1,322 @@
+{
+	"name": "CAT_MH_CHA",
+
+	"namespace": "VICTR\\REDCAP\\CAT_MH_CHA",
+
+	"description": "Add this module to a project and configure it to allow survey participants to take CAT-MH interviews and store their responses in REDCap.",
+
+	"documentation": "README.md",
+
+	"authors": [
+		{
+			"name": "Carl Reed",
+			"email": "carl.w.reed@vumc.org",
+			"institution": "Vanderbilt University Medical Center"
+		}
+	],
+
+	"permissions": [
+		"redcap_survey_complete",
+		"redcap_every_page_top"
+	],
+	
+	"enable-every-page-hooks-on-system-pages": false,	
+
+	"links": {
+		"project": [
+			{
+				"name": "CAT-MH Patient Dashboard",
+				"icon": "report",
+				"url": "dashboard.php"
+			},
+			{
+				"name": "CAT-MH Sequence Scheduling",
+				"icon": "report",
+				"url": "scheduling.php"
+			},
+			{
+				"name": "CAT-MH Interview Results Report",
+				"icon": "report",
+				"url": "resultsReport.php"
+			},
+			{
+				"name": "CAT-MH Interview Data Export",
+				"icon": "report",
+				"url": "export_interview_data.php"
+			},
+			{
+				"name": "CAT-MH Export and Delete Interviews",
+				"icon": "report",
+				"url": "export_and_delete_interviews.php"
+			}
+		],
+		"control-center": [
+
+		]
+	},
+
+	"no-auth-pages": [
+		"interview",
+		"CAT_MH_CHA",
+		"php/interview_ajax"
+	],
+
+	"project-settings": [
+		{
+			"key": "use_test_api",
+			"name": "Use ATT's test API for CAT-MH surveys. (If unchecked, the module will use the production CAT-MH API)",
+			"type": "checkbox"
+		},
+		{
+			"key": "disable_invites",
+			"name": "Disable automatic interview invitation and reminder emails",
+			"type": "checkbox"
+		},
+		{
+			"key": "enrollment_field",
+			"name": "Choose an Enrollment Date/Time field -- participants will start receiving interview invitations after enrollment",
+			"required": true,
+			"type": "field-list"
+		},
+		{
+			"key": "email-from",
+			"name": "Set the 'from' address emails will be sent from",
+			"required": true,
+			"type": "text"
+		},
+		{
+			"key": "email-subject",
+			"name": "Subject line for automated interview invitations",
+			"type": "text"
+		},
+		{
+			"key": "email-body",
+			"name": "Body text for automated interview invitations",
+			"type": "rich-text"
+		},
+		{
+			"key": "participant_email_field",
+			"name": "Field that holds participant email address to send interview invitations and reminders to",
+			"type": "field-list"
+		},
+		{
+			"key": "send-provider-emails",
+			"name": "Automatically send email to patient's provider upon interview completion",
+			"type": "checkbox"
+		},
+		{
+			"key": "invite-on-survey-complete",
+			"name": "Upon completing this survey, redirect participant to complete first scheduled sequence.",
+			"type": "form-list",
+			"repeatable": true
+		},
+		{
+			"key": "req-fields",
+			"name": "Required Fields - Withold all invitations and reminders if any of these fields are empty for a participant's record",
+			"repeatable": true,
+			"type": "field-list"
+		},
+		{
+			"key": "filter-fields",
+			"name": "Filter Fields - Withold all invitations and reminders if any of these fields are non-empty for a participant's record",
+			"repeatable": true,
+			"type": "field-list"
+		},
+		{
+			"key": "add-subjectid-columns",
+			"name": "Add a 'subjectid' column to the Patient Dashboard and Results Report pages",
+			"type": "checkbox"
+		},
+		{
+			"key": "check-sid-form",
+			"name": "Form containing the subjectid field must be complete before invites are sent to participants",
+			"type": "checkbox"
+		},
+		{
+         "key": "catmh_options",
+         "name": "CAT-MH Interview Options",
+         "type": "sub_settings",
+         "repeatable":true,
+         "sub_settings":[
+            {
+				"key": "sequence",
+				"name": "Name for this sequence of CAT-MH tests",
+				"required": true,
+				"type": "text"
+			},
+			{
+				"type": "checkbox",
+				"key": "hide_progress_bar",
+				"name": "Hide progress bar during interview"
+			},
+            {
+               "key": "language",
+               "name": "Interview language",
+               "required": true,
+               "type": "radio",
+			   "choices": [
+					{"value": "1", "name": "English"},
+					{"value": "2", "name": "Spanish"}
+			   ]
+            },
+			{
+				"type": "dropdown",
+				"key": "timeframe",
+				"name": "Sequence timeframe",
+				"choices": [
+					{"value": "1", "name": "Past hour"},
+					{"value": "2", "name": "Past day"},
+					{"value": "3", "name": "Past week"},
+					{"value": "4", "name": "Past 2 weeks"},
+					{"value": "5", "name": "Past 30 days"},
+					{"value": "6", "name": "Past 12 months"},
+					{"value": "7", "name": "Lifetime"}
+				]
+			},
+			{
+				"type": "checkbox",
+				"key": "hide_question_number",
+				"name": "Hide question numbers during interview"
+			},
+            {
+				"key": "expected_complete",
+				"name": "Expected number of days to complete interview",
+				"type": "text"
+			},
+            {
+				"key": "redirect_url",
+				"name": "If specified, the patient will be redirected to this URL upon clicking 'Continue' after completing this sequence",
+				"type": "text"
+			},
+            {
+				"key": "redirect_msg",
+				"name": "If specified, this message will appear above the 'Continue' button presented at the end of the survey.",
+				"type": "text"
+			},
+            {
+			   "key": "tests",
+			   "name": "Tests included in interview",
+			   "type": "descriptive"
+            },
+			{"type": "checkbox", "key": "dep", "name": "Depression"},
+			{"type": "checkbox", "key": "dep_show_results", "name": "Show Results"},
+			{"type": "text", "key": "dep_label", "name": "Alternate Label"},
+			{"type": "checkbox", "key": "mdd", "name": "Major Depressive Disorder"},
+			{"type": "checkbox", "key": "mdd_show_results", "name": "Show Results"},
+			{"type": "text", "key": "mdd_label", "name": "Alternate Label"},
+			{"type": "checkbox", "key": "anx", "name": "Anxiety Disorder"},
+			{"type": "checkbox", "key": "anx_show_results", "name": "Show Results"},
+			{"type": "text", "key": "anx_label", "name": "Alternate Label"},
+			{"type": "checkbox", "key": "mhm", "name": "Mania/Hypomania"},
+			{"type": "checkbox", "key": "mhm_show_results", "name": "Show Results"},
+			{"type": "text", "key": "mhm_label", "name": "Alternate Label"},
+			{"type": "checkbox", "key": "pdep", "name": "Depression (Perinatal)"},
+			{"type": "checkbox", "key": "pdep_show_results", "name": "Show Results"},
+			{"type": "text", "key": "pdep_label", "name": "Alternate Label"},
+			{"type": "checkbox", "key": "panx", "name": "Anxiety Disorder (Perinatal)"},
+			{"type": "checkbox", "key": "panx_show_results", "name": "Show Results"},
+			{"type": "text", "key": "panx_label", "name": "Alternate Label"},
+			{"type": "checkbox", "key": "pmhm", "name": "Mania/Hypomania (Perinatal)"},
+			{"type": "checkbox", "key": "pmhm_show_results", "name": "Show Results"},
+			{"type": "text", "key": "pmhm_label", "name": "Alternate Label"},
+			{"type": "checkbox", "key": "sud", "name": "Substance Use Disorder"},
+			{"type": "checkbox", "key": "sud_show_results", "name": "Show Results"},
+			{"type": "text", "key": "sud_label", "name": "Alternate Label"},
+			{"type": "checkbox", "key": "ptsd", "name": "Post-Traumatic Stress Disorder"},
+			{"type": "checkbox", "key": "ptsd_show_results", "name": "Show Results"},
+			{"type": "text", "key": "ptsd_label", "name": "Alternate Label"},
+			{"type": "checkbox", "key": "cssrs", "name": "C-SSRS Suicide Screen"},
+			{"type": "checkbox", "key": "cssrs_show_results", "name": "Show Results"},
+			{"type": "text", "key": "cssrs_label", "name": "Alternate Label"},
+			{"type": "checkbox", "key": "ss", "name": "Suicide Scale"},
+			{"type": "checkbox", "key": "ss_show_results", "name": "Show Results"},
+			{"type": "text", "key": "ss_label", "name": "Alternate Label"},
+			{"type": "checkbox", "key": "phq9", "name": "PHQ-9"},
+			{"type": "checkbox", "key": "phq9_show_results", "name": "Show Results"},
+			{"type": "text", "key": "phq9_label", "name": "Alternate Label"},
+			{"type": "checkbox", "key": "aadhd", "name": "Adult ADHD"},
+			{"type": "checkbox", "key": "aadhd_show_results", "name": "Show Results"},
+			{"type": "text", "key": "aadhd_label", "name": "Alternate Label"},
+			{"type": "checkbox", "key": "psys", "name": "Psychosis - Self-Report"},
+			{"type": "checkbox", "key": "psys_show_results", "name": "Show Results"},
+			{"type": "text", "key": "psys_label", "name": "Alternate Label"},
+			{"type": "checkbox", "key": "sdoh", "name": "Social Determinants of Health"},
+			{"type": "checkbox", "key": "sdoh_show_results", "name": "Show Results"},
+			{"type": "text", "key": "sdoh_label", "name": "Alternate Label"}
+         ]
+        },
+		{
+         "key": "kcat_sequences",
+         "name": "K-CAT Sequences",
+         "type": "sub_settings",
+         "repeatable":true,
+         "sub_settings":[
+            {
+				"key": "kcat_sequence",
+				"name": "Name for this sequence of K-CAT CAT-MH tests",
+				"type": "text"
+			},
+            {
+				"key": "kcat_expected_complete",
+				"name": "Expected number of days to complete interview",
+				"type": "text"
+			},
+            {"type": "checkbox", "key": "include_css", "name": "Include optional Child Suicide-Scale test"},
+            {"type": "text", "key": "c_anx_label", "name": "Child/Anxiety test alternate label"},
+            {"type": "text", "key": "c_mania_label", "name": "Child/Mania test alternate label"},
+            {"type": "text", "key": "c_odd_label", "name": "Child/Opp. Defiant Disorder test alternate label"},
+            {"type": "text", "key": "c_adhd_label", "name": "Child/ADHD test alternate label"},
+            {"type": "text", "key": "c_dep_label", "name": "Child/Depression test alternate label"},
+            {"type": "text", "key": "c_cd_label", "name": "Child/Conduct Disorder test alternate label"},
+            {"type": "text", "key": "c_ss_label", "name": "Child/Suicide Scale test alternate label"},
+            {"type": "text", "key": "p_anx_label", "name": "Parent/Anxiety test alternate label"},
+            {"type": "text", "key": "p_mania_label", "name": "Parent/Mania test alternate label"},
+            {"type": "text", "key": "p_odd_label", "name": "Parent/Opp. Defiant Disorder test alternate label"},
+            {"type": "text", "key": "p_adhd_label", "name": "Parent/ADHD test alternate label"},
+            {"type": "text", "key": "p_dep_label", "name": "Parent/Depression test alternate label"},
+            {"type": "text", "key": "p_cd_label", "name": "Parent/Conduct Disorder test alternate label"}
+         ]
+        }
+	],
+
+	"system-settings": [
+		{
+			"key": "applicationid",
+			"name": "Application ID received from CAT-MH API registration",
+			"required": true,
+			"type": "text"
+		},
+		{
+			"key": "organizationid",
+			"name": "Organization ID received from CAT-MH API registration",
+			"required": true,
+			"type": "text"
+		}
+	],
+
+	"crons": [
+		{
+			"cron_name": "emailer_cron",
+			"cron_description": "Cron that runs every minute to send automatic interview invites and reminder emails",
+			"method": "emailer_cron",
+			"cron_frequency": "3540",
+			"cron_max_run_time": "3600"
+		},
+		{
+			"cron_name": "run_chamindwell_automation",
+			"cron_description": "Cron that runs every Wednesday at midnight to automate CHAMindWell agenda update",
+			"method": "run_chamindwell_automation",
+			"cron_frequency": "7200",
+			"cron_max_run_time": "540"
+		}
+	],
+
+	"compatibility": {
+		"php-version-min": "",
+		"php-version-max": "",
+		"redcap-version-min": "",
+		"redcap-version-max": ""
+	},
+	
+	"framework-version": 5
+}
