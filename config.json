@@ -306,16 +306,17 @@
 			"cron_name": "run_chamindwell_automation",
 			"cron_description": "Cron that runs every Wednesday at midnight to automate CHAMindWell agenda update",
 			"method": "run_chamindwell_automation",
-			"cron_frequency": "7200",
-			"cron_max_run_time": "540"
+			"cron_weekday": 3,
+			"cron_hour": 23,
+			"cron_minute": 55,
 		}
 	],
 
 	"compatibility": {
-		"php-version-min": "",
-		"php-version-max": "",
-		"redcap-version-min": "",
-		"redcap-version-max": ""
+		"php-version-min": "7.0.9",
+		"php-version-max": "7.0.9",
+		"redcap-version-min": "10.0.4",
+		"redcap-version-max": "10.0.4"
 	},
 	
 	"framework-version": 5
