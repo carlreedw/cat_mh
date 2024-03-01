@@ -1,9 +1,8 @@
 {
     "require": {
-        "google/apiclient": "^2.12.1",
-        "google/auth": "^1.28",
-        "web-token/jwt-framework": "^2.1",
-        "league/oauth2-google": "^4.0"
+        "google/apiclient": "^2.0",
+        "google/auth": "^0",
+        "league/oauth2-google": "^0"
     },
     "scripts": {
         "pre-autoload-dump": "Google\\Task\\Composer::cleanup"

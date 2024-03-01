@@ -427,19 +427,3 @@ CHAMindWell en Español
 	}
 	
 }
-
-$automation_instance = new Automation($this);
-$automation_instance->determineLocality();
-$automation_instance->performAutomation();
-
-// $days_ago_8 = strtotime(date("Y-m-d")) - (24 * 60 * 60) * 8;
-// $days_ago_1 = strtotime(date("Y-m-d")) - (24 * 60 * 60) * 1;
-// $stats->dates = new stdClass();
-// $stats->dates->begin = date("n/j/y", $days_ago_8);
-// $stats->dates->end = date("n/j/y", $days_ago_1);
-// carl_log("\$stats->dates->begin: " . $stats->dates->begin);
-// carl_log("\$stats->dates->end: " . $stats->dates->end);
-// carl_log("\$stats->dates->begin timestamp: " . strtotime($stats->dates->begin));
-// carl_log("\$stats->dates->end timestamp: " . strtotime($stats->dates->end));
-// list($completed, $total) = $automation_instance->countCompletedInterviews("AVK5021", $stats->dates->begin, $stats->dates->end);
-// carl_log("completed: $completed, total: $total");
